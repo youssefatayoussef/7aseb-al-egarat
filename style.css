@@ -1,0 +1,279 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #a0c0e0;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 600px;
+    margin: 2px;
+    padding: 2px;
+    background-color: #ff0000;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid yellow;
+}
+/* ----- قسم العناوين والبيانات الشخصية ----- */
+h1.program-title {
+    text-align: center;
+    color: white;
+    font-size: 34px; /* حجم اسم البرنامج */
+    font-weight: bold;
+    margin: 5px 0;
+}
+.header-info {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #ffff00;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.header-info p {
+    margin: 2px 0;
+}
+.youssef-info, .phone-info {
+    font-size: 38px; /* حجم أكبر من اسم البرنامج */
+}
+
+/* ----- قسم الجداول والمدخلات الرئيسية ----- */
+.form-section {
+    padding: 0;
+}
+.main-form {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2px;
+    direction: rtl;
+    background-color: #00008b;
+    border: 2px solid yellow;
+}
+.main-form th, .main-form td {
+    border: 2px solid #ffff00;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-weight: bold; /* خط ثقيل لكل الكتابات */
+    font-size: 24px; /* حجم خط أكبر بنسبة 30% */
+    vertical-align: middle;
+}
+.main-form th {
+    background-color: #00008b;
+    color: #ffff00;
+}
+.col-60 { width: 60%; }
+.col-40 { width: 40%; }
+.col-20 { width: 20%; }
+.col-10 { width: 10%; }
+
+input[type="number"], input[type="text"], select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ffff00;
+    background-color: #00008b;
+    color: white;
+    font-size: 21px; /* حجم خط أكبر للمدخلات */
+    font-weight: bold; /* خط ثقيل للمدخلات */
+    box-sizing: border-box;
+    text-align: center;
+}
+select {
+    width: calc(100% + 10px);
+    margin: -5px;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ff00ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 2px;
+    border: 2px solid #ffff00;
+}
+button:hover {
+    background-color: #cc00cc;
+}
+.result-section {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #00008b;
+    border-radius: 4px;
+    border: 2px solid #ffff00;
+    text-align: center;
+}
+.result-section h2 {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+/* ----- قسم الترميمات ----- */
+.renovation-tables-container {
+    padding: 0;
+    margin-bottom: 2px;
+    background-color: #00008b;
+    border: 2px solid yellow;
+}
+.renovation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00008b;
+    padding: 5px;
+    color: yellow;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid yellow;
+}
+.renovation-header p {
+    margin: 0;
+}
+.renovation-header input {
+    width: 60px;
+    font-size: 24px;
+    text-align: center;
+}
+.renovation-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid yellow;
+}
+.renovation-row:last-child {
+    border-bottom: none;
+}
+.renovation-cell {
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    border-left: 2px solid yellow;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.renovation-cell:last-child {
+    border-left: none;
+}
+.renovation-row .label {
+    width: 60%;
+    justify-content: flex-start;
+    padding-right: 10px;
+    text-align: right;
+    font-size: 26px;
+}
+.renovation-row .empty-space {
+    width: 10%;
+}
+.renovation-row .month-input {
+    width: 10%;
+}
+.renovation-row .year-input {
+    width: 20%;
+}
+.renovation-cell input {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ----- أنماط جدول تدرج الأجرة ----- */
+#history-title {
+    color: #00008b; /* لون الخط أزرق */
+    background-color: white; /* الخلفية بيضاء */
+    font-weight: bold;
+    font-size: 26px; /* حجم الخط */
+    text-align: center;
+    padding: 5px;
+    border: 2px solid red; /* حدود حمراء */
+    border-bottom: none;
+    margin-bottom: 0;
+}
+#rent-history-display {
+    margin-top: 0;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid red;
+    border-top: none;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    direction: rtl;
+    text-align: center;
+}
+.history-table th, .history-table td {
+    border: 2px solid red;
+    padding: 8px;
+    font-size: 18px; /* حجم الخط أكبر بنسبة 10% */
+    color: #00008b;
+    font-weight: bold; /* خط ثقيل */
+    vertical-align: middle;
+}
+.history-table thead th {
+    background-color: white;
+    color: #00008b;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 2px solid red;
+}
+.history-table .final-row td {
+    font-weight: bold;
+    color: red;
+    background-color: white;
+}
+.print-button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    background-color: #008000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px auto;
+    font-weight: bold;
+}
+.print-button:hover {
+    background-color: #006600;
+}
+
+/* ----- أنماط الطباعة ----- */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .container, .container * {
+        visibility: visible;
+    }
+    .container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-shadow: none;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .result-section, .history-table {
+        page-break-inside: avoid;
+    }
+    button, .user-code-container {
+        display: none;
+    }
+}

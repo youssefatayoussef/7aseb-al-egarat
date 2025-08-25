@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامج حاسب الإيجارات المصرية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="program-title">برنامج حاسب الإيجارات المصرية</h1>
+        <div class="header-info">
+            <p class="youssef-info">إعداد يوسف عطا يوسف</p>
+            <p class="phone-info">تليفون 00201061724667</p>
+            <p>كود المستخدم: ٠٠٠٠٠٠ احفظ هذا الرقم لأنك ستحتاجه فيما بعد</p>
+        </div>
+
+        <div class="form-section">
+            <table class="main-form">
+                <thead>
+                    <tr>
+                        <th class="col-60" colspan="2">كود التفعيل</th>
+                        <th class="col-40" colspan="3"><input type="text" id="user-code" placeholder="أدخل كود التفعيل هنا"></th>
+                    </tr>
+                    <tr>
+                        <th class="col-60" colspan="2">الإدخالات المطلوبة</th>
+                        <th class="col-10">يوم</th>
+                        <th class="col-10">شهر</th>
+                        <th class="col-20">سنة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-60" colspan="2">تاريخ إنشاء العقار</td>
+                        <td class="col-10"><input type="number" id="creation-day" placeholder="1" value="1"></td>
+                        <td class="col-10"><input type="number" id="creation-month" placeholder="1" value="1"></td>
+                        <td class="col-20"><input type="number" id="creation-year" placeholder="1944" value="1944"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-60" colspan="2">تاريخ التعاقد</td>
+                        <td class="col-10"><input type="number" id="contract-day" placeholder="1" value="1"></td>
+                        <td class="col-10"><input type="number" id="contract-month" placeholder="1" value="1"></td>
+                        <td class="col-20"><input type="number" id="contract-year" placeholder="1944" value="1944"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-60" colspan="2">التاريخ المطلوب معرفة الأجرة فيه</td>
+                        <td class="col-10"><input type="number" id="target-day" placeholder="1" value="1"></td>
+                        <td class="col-10"><input type="number" id="target-month" placeholder="9" value="9"></td>
+                        <td class="col-20"><input type="number" id="target-year" placeholder="2025" value="2025"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-60" colspan="2">القيمة الإيجارية الأصلية</td>
+                        <td class="col-40" colspan="3"><input type="text" id="original-rent" placeholder="0.00" value="0.00" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-60" colspan="2">نسبة الزيادة السنوية</td>
+                        <td class="col-40" colspan="3"><input type="number" id="annual-increase" placeholder="0.00" value="0.00"></td>
+                    </tr>
+                    <tr>
+                        <td class="col-60" colspan="2">مستوى المنطقة</td>
+                        <td class="col-40" colspan="3">
+                            <select id="area-level">
+                                <option value="0">قائمة منسدلة</option>
+                                <option value="1">منطقة راقية متميزة</option>
+                                <option value="2">منطقة متوسطة</option>
+                                <option value="3">منطقة إقتصادية</option>
+                                <option value="4">منطقة لم يحدد مستواها</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-60" colspan="2">نوع المستأجر</td>
+                        <td class="col-40" colspan="3">
+                            <select id="tenant-type">
+                                <option value="0">قائمة منسدلة</option>
+                                <option value="1">سكني طبيعي</option>
+                                <option value="2">سكني إعتباري</option>
+                                <option value="3">غيرسكني طبيعي</option>
+                                <option value="4">غيرسكني إعتباري</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="renovation-tables-container">
+            <div class="renovation-header">
+                <p>عدد مرات عمل ترميمات شاملة بالعقار</p>
+                <input type="number" id="renovation-count" placeholder="0" value="0" min="0" max="6">
+            </div>
+            <div id="renovation-date-fields">
+            </div>
+        </div>
+        
+        <button onclick="calculateAndShowResult()">اضغط هنا لمعرفة القيمة الإيجارية</button>
+
+        <div id="result-section" class="result-section" style="display:none;">
+            <h2>الأجرة النهائية في التاريخ المطلوب: <span id="final-rent-display">0.00</span></h2>
+        </div>
+        
+        <h2 id="history-title" style="display:none;">جدول تدرج القيمة الإيجارية حتى التاريخ المطلوب</h2>
+        
+        <div id="rent-history-display"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
